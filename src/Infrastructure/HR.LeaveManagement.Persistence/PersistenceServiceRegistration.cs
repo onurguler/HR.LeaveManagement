@@ -15,6 +15,8 @@ public static class PersistenceServiceRegistration
         {
             options.UseNpgsql(configuration.GetConnectionString("HrDatabaseConnectionString"));
         });
+        
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
