@@ -3,7 +3,7 @@ namespace HR.LeaveManagement.Application.Contracts.Logging;
 #pragma warning disable S2326
 // ReSharper disable once UnusedTypeParameter
 public interface IAppLogger<T>
-#pragma warning enable S2326
+#pragma warning restore S2326
 
 {
     void LogInformation(string message, params object?[] args);
