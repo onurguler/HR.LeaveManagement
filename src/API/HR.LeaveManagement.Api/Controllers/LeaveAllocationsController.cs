@@ -28,7 +28,7 @@ public class LeaveAllocationsController : ControllerBase
     }
 
     // GET: api/LeaveAllocations/5
-    [HttpGet("{id:int}", Name = "Get")]
+    [HttpGet("{id:int}")]
     public async Task<ActionResult<LeaveAllocationDetailsDto>> Get(int id)
     {
         var leaveAllocation = await _mediator.Send(new GetLeaveAllocationDetailsQuery(id));

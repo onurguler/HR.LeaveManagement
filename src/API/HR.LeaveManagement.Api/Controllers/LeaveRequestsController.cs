@@ -31,7 +31,7 @@ public class LeaveRequestsController : ControllerBase
     }
 
     // GET: api/LeaveRequests/5
-    [HttpGet("{id:int}", Name = "Get")]
+    [HttpGet("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<ActionResult<LeaveRequestDetailsDto>> Get(int id)
@@ -62,8 +62,8 @@ public class LeaveRequestsController : ControllerBase
     }
 
     // PUT: api/LeaveRequests/5/CancelRequest
-    [HttpPut("{id:int}")]
-    [Route("CancelRequest")]
+    [HttpPut]
+    [Route("{id:int}/CancelRequest")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<ActionResult> CancelRequest(int id)

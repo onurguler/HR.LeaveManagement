@@ -28,7 +28,7 @@ public class LeaveTypesController : ControllerBase
     }
 
     // GET: api/LeaveTypes/5
-    [HttpGet("{id:int}", Name = "Get")]
+    [HttpGet("{id:int}")]
     public async Task<ActionResult<LeaveTypeDetailsDto>> Get(int id)
     {
         var leaveType = await _mediator.Send(new GetLeaveTypeDetailsQuery(id));
