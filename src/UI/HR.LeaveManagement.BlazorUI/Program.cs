@@ -13,7 +13,7 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddHttpClient<IServiceClient, ServiceClient>(client =>
-    client.BaseAddress = new Uri("https//localhost:5001"));
+    client.BaseAddress = new Uri("https://localhost:7013"));
 
 builder.Services.AddScoped<ILeaveTypeService, LeaveTypeService>();
 builder.Services.AddScoped<ILeaveAllocationService, LeaveAllocationService>();
