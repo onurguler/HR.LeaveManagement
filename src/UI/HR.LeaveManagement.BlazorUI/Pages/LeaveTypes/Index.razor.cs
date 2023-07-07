@@ -7,8 +7,15 @@ namespace HR.LeaveManagement.BlazorUI.Pages.LeaveTypes;
 
 public partial class Index
 {
-    [Inject] public NavigationManager NavigationManager { get; set; } = null!;
-    [Inject] public ILeaveTypeService LeaveTypeService { get; set; } = null!;
+    [Inject]
+    public NavigationManager NavigationManager { get; set; } = null!;
+
+    [Inject]
+    public ILeaveTypeService LeaveTypeService { get; set; } = null!;
+
+    [Inject]
+    public ILeaveAllocationService LeaveAllocationService { get; set; } = null!;
+
     List<LeaveTypeVM>? LeaveTypes { get; set; }
     string? Message { get; set; }
 
@@ -17,9 +24,10 @@ public partial class Index
         NavigationManager.NavigateTo("/leave-types/create");
     }
 
-    void AllocateLeaveType(int id)
+    async Task AllocateLeaveType(int id)
     {
         // Use Leave Allocation Service here
+        await LeaveAllocationService.CreateLeaveAllocations(id);
     }
 
     void DetailsLeaveType(int id)

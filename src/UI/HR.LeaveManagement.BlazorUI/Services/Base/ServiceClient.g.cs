@@ -48,12 +48,12 @@ namespace HR.LeaveManagement.BlazorUI.Services.Base
         /// <exception cref="ApiException">A server side error occurred.</exception>
         System.Threading.Tasks.Task<System.Collections.Generic.ICollection<LeaveAllocationDto>> LeaveAllocationsAllAsync(bool? isLoggedInUser, System.Threading.CancellationToken cancellationToken);
 
-        /// <returns>Created</returns>
+        /// <returns>No Content</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
         System.Threading.Tasks.Task LeaveAllocationsPOSTAsync(CreateLeaveAllocationCommand body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>Created</returns>
+        /// <returns>No Content</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
         System.Threading.Tasks.Task LeaveAllocationsPOSTAsync(CreateLeaveAllocationCommand body, System.Threading.CancellationToken cancellationToken);
 
@@ -456,7 +456,7 @@ namespace HR.LeaveManagement.BlazorUI.Services.Base
             }
         }
 
-        /// <returns>Created</returns>
+        /// <returns>No Content</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task LeaveAllocationsPOSTAsync(CreateLeaveAllocationCommand body)
         {
@@ -464,7 +464,7 @@ namespace HR.LeaveManagement.BlazorUI.Services.Base
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        /// <returns>Created</returns>
+        /// <returns>No Content</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
         public virtual async System.Threading.Tasks.Task LeaveAllocationsPOSTAsync(CreateLeaveAllocationCommand body, System.Threading.CancellationToken cancellationToken)
         {
@@ -504,7 +504,7 @@ namespace HR.LeaveManagement.BlazorUI.Services.Base
                         ProcessResponse(client_, response_);
 
                         var status_ = (int)response_.StatusCode;
-                        if (status_ == 201)
+                        if (status_ == 204)
                         {
                             return;
                         }

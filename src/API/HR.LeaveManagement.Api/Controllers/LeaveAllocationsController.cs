@@ -37,12 +37,12 @@ public class LeaveAllocationsController : ControllerBase
 
     // POST: api/LeaveAllocations
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult> Post([FromBody] CreateLeaveAllocationCommand command)
     {
-        var response = await _mediator.Send(command);
-        return CreatedAtAction(nameof(Get), new { id = response });
+        await _mediator.Send(command);
+        return NoContent();
     }
 
     // PUT: api/LeaveAllocations/5
