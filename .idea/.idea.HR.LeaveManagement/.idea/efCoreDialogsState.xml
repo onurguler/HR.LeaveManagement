@@ -5,6 +5,7 @@
       <map>
         <entry key="Common:ab685103-e215-4c6a-958b-13e1303ab47e:dbContext" value="HR.LeaveManagement.Persistence.DatabaseContexts.HrDatabaseContext" />
         <entry key="Common:buildConfiguration" value="Debug" />
+        <entry key="Common:e9f2f278-1b9a-43f2-b501-f9bee12ce933:dbContext" value="HR.LeaveManagement.Identity.DbContexts.HrLeaveManagementIdentityDbContext" />
         <entry key="Common:noBuild" value="false" />
         <entry key="Common:outputFolder" value="Migrations" />
         <entry key="Common:useDefaultConnection" value="true" />
